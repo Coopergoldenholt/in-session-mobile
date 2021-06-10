@@ -38,5 +38,10 @@ export interface IIcons {
   | 'chevron-up' 
   | 'chevron-down'
   | 'video-call'
-  | 'search'
+  | 'search' 
+  | 'channel' 
+  | 'dollar-sign'
+  | 'settings'
+  | 'question-mark'
+  | 'logout'
 }

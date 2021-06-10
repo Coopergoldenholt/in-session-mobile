@@ -153,6 +153,51 @@ const Icon = (props: IProps) => {
           style={props.style}
         />
       );
+    case 'channel':
+      return (
+        <MaterialIcon
+          name="personal-video"
+          color={props.color}
+          size={props.size}
+          style={props.style}
+        />
+      );
+    case 'dollar-sign':
+      return (
+        <MaterialIcon
+          name="attach-money"
+          color={props.color}
+          size={props.size}
+          style={props.style}
+        />
+      );
+    case 'settings':
+      return (
+        <MaterialIcon
+          name="settings"
+          color={props.color}
+          size={props.size}
+          style={props.style}
+        />
+      );
+    case 'question-mark':
+      return (
+        <MaterialIcon
+          name="help-outline"
+          color={props.color}
+          size={props.size}
+          style={props.style}
+        />
+      );
+    case 'logout':
+      return (
+        <MaterialIcon
+          name="logout"
+          color={props.color}
+          size={props.size}
+          style={props.style}
+        />
+      );
     default:
       return null;
   }

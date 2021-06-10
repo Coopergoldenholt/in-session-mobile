@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-// import {Avatar} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
+
 import {BrightText, Colors} from '../../styles';
-
+import Avatar from '../../components/Avatar';
 import PurchasesModal from '../../components/Modals/PurchasesModal';
+import {IconButton} from '../../components/Buttons';
 
-const User = props => {
+const User = () => {
   const [showPurchasesModal, setShowPurchasesModal] = useState(false);
   return (
-    <View style={{backgroundColor: '#222222', flex: 1}}>
+    <View style={styles.container}>
       {/* Modals */}
       <PurchasesModal
         isVisible={showPurchasesModal}
@@ -26,7 +26,7 @@ const User = props => {
           borderBottomColor: 'rgba(255,255,255, 0.38)',
           borderBottomWidth: 1,
         }}>
-        {/* <Avatar.Image size={60} style={{marginRight: 10}} /> */}
+        <Avatar />
         <View>
           <BrightText style={{fontSize: 25}}>Cooper Holt</BrightText>
           <BrightText style={{fontSize: 15, marginTop: 3}}>
@@ -35,39 +35,51 @@ const User = props => {
         </View>
       </View>
       <View style={styles.settingsContainer}>
-        <TouchableOpacity style={styles.individualContainer}>
-          <Icon
-            name="personal-video"
-            color="rgba(255,255,255, 0.87)"
-            size={35}
-          />
+        <IconButton
+          iconType="channel"
+          color={Colors.brightColor}
+          size={35}
+          containerStyles={styles.individualContainer}>
           <BrightText style={styles.settingsText}>Your Channel</BrightText>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => setShowPurchasesModal(true)}
-          style={styles.individualContainer}>
-          <Icon name="attach-money" color="rgba(255,255,255, 0.87)" size={35} />
+        </IconButton>
+        <IconButton
+          iconType="dollar-sign"
+          color={Colors.brightColor}
+          size={35}
+          containerStyles={styles.individualContainer}>
           <BrightText style={styles.settingsText}>Purchases</BrightText>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.individualContainer}>
-          <Icon name="settings" color="rgba(255,255,255, 0.87)" size={35} />
+        </IconButton>
+        <IconButton
+          iconType="settings"
+          color={Colors.brightColor}
+          size={35}
+          containerStyles={styles.individualContainer}>
           <BrightText style={styles.settingsText}>Settings</BrightText>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.individualContainer}>
-          <Icon name="help-outline" color="rgba(255,255,255, 0.87)" size={35} />
+        </IconButton>
+        <IconButton
+          iconType="question-mark"
+          color={Colors.brightColor}
+          size={35}
+          containerStyles={styles.individualContainer}>
           <BrightText style={styles.settingsText}>Help & Feedback</BrightText>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{...styles.individualContainer, marginBottom: 20}}>
-          <Icon name="logout" color="rgba(255,255,255, 0.87)" size={35} />
+        </IconButton>
+        <IconButton
+          iconType="logout"
+          color={Colors.brightColor}
+          size={35}
+          containerStyles={{...styles.individualContainer, paddingBottom: 20}}>
           <BrightText style={styles.settingsText}>Logout</BrightText>
-        </TouchableOpacity>
+        </IconButton>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: Colors.bolderBackground,
+    flex: 1,
+  },
   settingsContainer: {
     marginTop: 20,
     backgroundColor: Colors.backgroundColor,

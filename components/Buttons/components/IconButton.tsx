@@ -9,6 +9,7 @@ interface IProps extends IIcons {
   onPress: any;
   containerStyles?: any;
   iconStyles?: any;
+  children?: any;
 }
 
 const IconButton = (props: IProps) => {
@@ -20,6 +21,7 @@ const IconButton = (props: IProps) => {
         color={props.color}
         style={props.iconStyles}
       />
+      {props.children}
     </TouchableOpacity>
   );
 };

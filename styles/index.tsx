@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, useColorScheme} from 'react-native';
 import {IText} from '../types';
 
-const isDarkMode = null;
+const isDarkMode = 'dark';
 // useColorScheme() === 'dark';
 
 export const BrightText = (props: IText) => {
